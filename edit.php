@@ -2,12 +2,12 @@
 include "conexion.php";
 $id = $_GET['id'];
 $nombre =$_POST['nombre'];
-$dpi =$_POST['dpi'];
+$apellido =$_POST['apellido'];
 $telefono =$_POST['telefono'];
-$fecha =$_POST['fecha'];
-$carrera =$_POST['carrera'];
-$año =$_POST['año'];
-$sql = $conn -> query("UPDATE registros SET nombre ='".$nombre."', dpi='".$dpi."', telefono='".$telefono."', fecha_nacimiento='".$fecha."', carrera='".$carrera."', año='".$año."' WHERE id ='".$id."'");
+$dpi =$_POST['dpi'];
+$destino =$_POST['destino'];
+$vuelo =$_POST['vuelo'];
+$sql = $conn -> query("UPDATE registro SET nombre ='".$nombre."', apellido ='".$apellido."', cel='".$telefono."', dpi='".$dpi."', destino='".$destino."', vuelo='".$vuelo."' WHERE id ='".$id."'");
 if($sql==1){
     header('Location:Listar.php');
 }

@@ -114,47 +114,46 @@
         <?php
     include "conexion.php";
     $id = $id=$_GET['id'];
-    $sql = $conn ->query("SELECT * FROM registros WHERE id='$id'");
+    $sql = $conn ->query("SELECT * FROM registro WHERE id='$id'");
     while($dat=$sql->fetch_object()){
 ?>
    <form action="edit.php?id=<?php echo $dat->id; ?>" method="post">
     <div class="mb-3">
-        <label class="form-label">No. de Usuario</label>
+        <label class="form-label">No. del viajero</label>
         <input type="text" class="form-control" name="id" value="<?php echo $dat->id; ?>" disabled ></div>
       <div class="mb-3">
-        <label class="form-label">Nombre del alumno</label>
-        <input type="text" class="form-control" name="nombre" value="<?php echo $dat -> nombre;?>" placeholder="Nombre del producto" required >
+        <label class="form-label">Nombre del viajero</label>
+        <input type="text" class="form-control" name="nombre" value="<?php echo $dat -> nombre;?>" placeholder="Nombre del viajero" required >
       </div>
-
+      <div class="mb-3">
+        <label class="form-label">Apellido del viajero</label>
+        <input type="text" class="form-control" name="apellido" value="<?php echo $dat -> apellido;?>" placeholder="Apellido del viajero" required >
+      </div>
+      <div class="mb-3">
+        <label class="form-label">No.Telefono</label>
+        <input type="number" class="form-control" name="telefono"value="<?php echo $dat -> cel;?>" placeholder="Numero del viajero" required>
+      
+      </div>
       <div class="mb-3">
         <label class="form-label">DPI</label>
         <input type="number" class="form-control" name="dpi"value="<?php echo $dat -> dpi;?>" placeholder="DPI" required>
       </div>
 
       <div class="mb-3">
-        <label class="form-label">No.Telefono</label>
-        <input type="number" class="form-control" name="telefono"value="<?php echo $dat -> telefono;?>" placeholder="Numero del alumno" required>
+        <label class="form-label">Destino del viajero</label>
+        <input type="text" class="form-control" name="destino"value="<?php echo $dat -> destino;?>" placeholder="Destino del viajero" required>
       
       </div>
       <div class="mb-3">
-        <label class="form-label">Fecha de Nacimiento</label>
-        <input type="date" class="form-control" name="fecha"value="<?php echo $dat -> fecha_nacimiento;?>" placeholder="Fecha de nacimiento" required>
+        <label class="form-label">No.Vuelo</label>
+        <input type="number" class="form-control" name="vuelo"value="<?php echo $dat -> vuelo;?>" placeholder="Vuelo del viajero" required>
       
       </div>
-      <div class="mb-3">
-        <label class="form-label">Carrera</label>
-        <input type="text" class="form-control" name="carrera"value="<?php echo $dat -> carrera;?>" placeholder="Carrera cursada" required>
-      
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Año</label>
-        <input type="number" class="form-control" name="año"value="<?php echo $dat -> año;?>" placeholder="Año del ALumno" required>
-      
-      </div>
+  
       <?php
     }
       ?>
-      <button type="submit-" class="btn btn-outline-dark">Registrar</button>
+      <button type="submit-" class="btn btn-outline-dark">Actualizar</button>
    </form>
         <!-- /.card-footer-->
       </div>

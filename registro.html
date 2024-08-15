@@ -143,6 +143,10 @@
                 <label for="fecha">Destino</label>
                 <input type="text" class="form-control" name="destino" placeholder="Destino del viajero">
                 </div>
+                <div class="form-group">
+                  <label for="fecha">No. Vuelo</label>
+                  <input type="number" class="form-control" name="vuelo" placeholder="Numero de vuelo del viajero">
+                  </div>
               <td>
                 <button type="submit" class="btn btn-block btn-outline-info">Registro</button>
                 </td>
@@ -171,7 +175,16 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+<script>
+  $(function() {
+      $("#example1").DataTable({
+          "responsive": true,
+          "lengthChange": false,
+          "autoWidth": false,
+          "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  });
+  </script>
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
